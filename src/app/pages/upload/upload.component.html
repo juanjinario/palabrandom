@@ -1,3 +1,14 @@
 <div class="content-pane">
-  <h2 class="title">Subir palabras</h2>
+  <h2 class="title">Sube tus palabras</h2>
+
+  <form [formGroup]="uploadForm" (ngSubmit)="save()">
+    <textarea
+      formControlName="word"
+      name="textarea"
+      rows="10"
+      cols="50"
+      placeholder="Ingresa tus palabras"
+    ></textarea>
+    <button type="submit">Subir</button>
+  </form>
 </div>
