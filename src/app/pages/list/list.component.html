@@ -1,3 +1,6 @@
 <div class="content-pane">
-  <p>list works!</p>
+  <form [formGroup]="uploadForm" (ngSubmit)="save()">
+    <input formControlName="word" type="text" />
+    <button type="submit">Subir</button>
+  </form>
 </div>
