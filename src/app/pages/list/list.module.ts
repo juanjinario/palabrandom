@@ -2,12 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ListRoutingModule } from './list-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+// Modules
+import { SharedModule } from 'src/app/shared/shared.module';
 
+// Components
 import { ListComponent } from './list.component';
+import { FiltersComponent } from './components/filters/filters.component';
 
 @NgModule({
-  declarations: [ListComponent],
-  imports: [CommonModule, ListRoutingModule, ReactiveFormsModule],
+  declarations: [
+    ListComponent,
+    FiltersComponent
+  ],
+  imports: [
+    CommonModule,
+    ListRoutingModule,
+    SharedModule
+  ]
 })
 export class ListModule {}
