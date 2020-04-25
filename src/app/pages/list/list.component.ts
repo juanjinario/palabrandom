@@ -30,6 +30,5 @@ export class ListComponent implements OnInit {
   }
 
   save() {
-    this.wordsService.addWords(['a', 'b']);
   }
 }
