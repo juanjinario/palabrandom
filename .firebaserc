@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "palabramdon": {
+      "hosting": {
+        "palabrandom": [
+          "palabramdon"
+        ]
+      }
+    }
+  }
+}
