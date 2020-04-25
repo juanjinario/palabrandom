@@ -15,17 +15,16 @@ export class WordsService {
   }
 
   addWords(words: string[]) {
-    words.map((word) => {
-      const newWord = new Word(word, '', '');
-      this.firestore
+    words.map(async (word) => {
+      const newWord = new Word(word.toLowerCase(), '', '');
+      await this.firestore
         .collection('words')
         .add({ ...newWord })
-        .then((value) => {
-          // console.log(value);
-        })
+        .then((value) => {})
         .catch((err) => {
-          console.log(err);
+          return false;
         });
     });
+    return true;
   }
 }
