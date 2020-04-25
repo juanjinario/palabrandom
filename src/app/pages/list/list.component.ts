@@ -15,4 +15,9 @@ export class ListComponent implements OnInit {
       word: ['', Validators.required],
     });
   }
+
+  save() {
+    const array = this.uploadForm.value.split();
+    console.log(array);
+  }
 }

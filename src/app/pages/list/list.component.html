@@ -1,4 +1,6 @@
 <div class="content-pane">
-  <input type="text" />
-  <button></button>
+  <form [formGroup]="uploadForm" (ngSubmit)="save()">
+    <input formControlName="word" type="text" />
+    <button type="submit"></button>
+  </form>
 </div>
