@@ -17,12 +17,12 @@ export class FiltersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /** Activa - desactiva un orígen seleccionado en función del código. */
+  /** Sección de la palabra */
   toogleOrigin(numberSelected) {
     this.number = numberSelected;
   }
 
-  setNumber() {
+  setNumberFilter() {
     this.onClick.emit({});
   }
 

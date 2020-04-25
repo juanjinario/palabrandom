@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { WordsService } from 'src/app/services/words.service';
-import { Word } from 'src/app/models/word.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
 })
-export class ListComponent implements OnInit {
-
+export class ListComponent {
+  $allWords: Observable<any[]>;
   numberOptions: {}[];
   number: {};
   wordList;
@@ -24,9 +23,6 @@ export class ListComponent implements OnInit {
       {id: 200, title: '200 palabra', value: 200},
     ];
     this.number = this.numberOptions[0];
-   }
-
-   ngOnInit(): void {
   }
 
   getWords() {
