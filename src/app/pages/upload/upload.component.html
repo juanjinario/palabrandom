@@ -1,14 +1,18 @@
 <div class="content-pane">
-  <h2 class="title">Sube tus palabras</h2>
+  <mat-card class="card">
+    <h2 class="title">Sube tus palabras</h2>
 
-  <form [formGroup]="uploadForm" (ngSubmit)="save()">
-    <textarea
-      formControlName="word"
-      name="textarea"
-      rows="10"
-      cols="50"
-      placeholder="Ingresa tus palabras"
-    ></textarea>
-    <button type="submit">Subir</button>
-  </form>
+    <form class="row" [formGroup]="uploadForm" (ngSubmit)="save()">
+      <mat-form-field class="form-field">
+        <mat-label>Ingrese sus palabras!!.</mat-label>
+        <textarea formControlName="word" matInput></textarea>
+      </mat-form-field>
+      <button class="item-end" mat-raised-button color="primary" type="submit">
+        <mat-icon>publish</mat-icon> Upload
+      </button>
+      <span class="item-end"
+        ><strong>Info:</strong> Las palabras van separadas por una coma</span
+      >
+    </form>
+  </mat-card>
 </div>

@@ -8,6 +8,7 @@ import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 export class FiltersComponent implements OnInit {
 
   @Output() onClick: EventEmitter<any> = new EventEmitter();
+  @Output() numberChange = new EventEmitter<any>();
   @Input() number;
   @Input() numberOptions;
 
@@ -20,10 +21,12 @@ export class FiltersComponent implements OnInit {
   /** Sección de la palabra */
   toogleOrigin(numberSelected) {
     this.number = numberSelected;
+    // Debe llamarse igual
+    this.numberChange.emit(this.number);
   }
 
   setNumberFilter() {
-    this.onClick.emit({});
+    this.onClick.emit(this.number);
   }
 
 }
