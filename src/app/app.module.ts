@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ReactiveFormsModule } from '@angular/forms';
+
 // Components
 import { AppComponent } from './app.component';
 
@@ -24,6 +26,7 @@ import { environment } from 'src/environments/environment';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
