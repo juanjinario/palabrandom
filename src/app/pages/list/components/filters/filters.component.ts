@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -7,10 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FiltersComponent implements OnInit {
 
+  @Output() onClick: EventEmitter<any> = new EventEmitter();
   @Input() number;
   @Input() numberOptions;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
@@ -18,6 +20,10 @@ export class FiltersComponent implements OnInit {
   /** Activa - desactiva un orígen seleccionado en función del código. */
   toogleOrigin(numberSelected) {
     this.number = numberSelected;
+  }
+
+  setNumber() {
+    this.onClick.emit({});
   }
 
 }
