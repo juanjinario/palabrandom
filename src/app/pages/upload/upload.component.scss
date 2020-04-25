@@ -1,0 +1,20 @@
+.row {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+
+  button {
+    margin-top: 20px;
+
+    @media(min-width: 769px) {
+      margin-top: 0;
+    }
+  }
+}
+
+.item-end {
+  align-self: flex-end;
+  margin: 10px;
+}
