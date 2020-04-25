@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { WordsService } from 'src/app/services/words.service';
+import { Word } from 'src/app/models/word.model';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
 
@@ -11,7 +14,7 @@ export class ListComponent implements OnInit {
   number: {};
   wordList;
 
-  constructor() {
+  constructor(private wordsService: WordsService) {
     this.numberOptions = [
       {id: 1, title: '1 palabra'},
       {id: 5, title: '5 palabra'},
@@ -26,4 +29,7 @@ export class ListComponent implements OnInit {
    ngOnInit(): void {
   }
 
+  save() {
+    this.wordsService.addWords(['a', 'b']);
+  }
 }
