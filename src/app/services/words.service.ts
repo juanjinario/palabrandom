@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'firebase/firestore';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Word } from '../models/word.model';
 
 @Injectable({
   providedIn: 'root',
@@ -8,9 +9,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class WordsService {
   constructor(private firestore: AngularFirestore) {}
 
-  getWords(words: string[]) {}
+  getWords(words: Word[]) {}
 
-  addWords(words: string[]) {
+  addWords(words: Word[]) {
     this.firestore
       .collection('words')
       .add({ ...words })
