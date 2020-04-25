@@ -26,6 +26,7 @@ export class ListComponent {
   }
 
   getWords() {
-    console.log(this.number);
+    this.$allWords = this.wordsService.getWords();
+    console.log(this.$allWords);
   }
 }
