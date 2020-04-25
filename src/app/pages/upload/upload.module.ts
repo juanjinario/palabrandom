@@ -3,13 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { UploadRoutingModule } from './upload-routing.module';
 import { UploadComponent } from './upload.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [UploadComponent],
-  imports: [
-    CommonModule,
-    UploadRoutingModule
-  ]
+  imports: [CommonModule, UploadRoutingModule, ReactiveFormsModule],
 })
-export class UploadModule { }
+export class UploadModule {}

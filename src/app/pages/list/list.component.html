@@ -1,6 +1,7 @@
 <div class="content-pane">
-  <form [formGroup]="uploadForm" (ngSubmit)="save()">
-    <input formControlName="word" type="text" />
-    <button type="submit">Subir</button>
-  </form>
+  <ul>
+    <li *ngFor="let item of $allWords | async">
+      {{ item.name }}
+    </li>
+  </ul>
 </div>

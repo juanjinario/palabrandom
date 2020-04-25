@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { WordsService } from 'src/app/services/words.service';
-import { Word } from 'src/app/models/word.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -9,18 +8,11 @@ import { Word } from 'src/app/models/word.model';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  uploadForm: FormGroup;
-  constructor(private fb: FormBuilder, private wordsService: WordsService) {}
+  $allWords: Observable<any[]>;
+
+  constructor(private wordsService: WordsService) {}
 
   ngOnInit(): void {
-    this.uploadForm = this.fb.group({
-      word: ['', Validators.required],
-    });
-  }
-
-  save() {
-    const { word } = this.uploadForm.value;
-    const wordArr: Word[] = word.split();
-    this.wordsService.addWords(wordArr);
+    this.$allWords = this.wordsService.getWords();
   }
 }
