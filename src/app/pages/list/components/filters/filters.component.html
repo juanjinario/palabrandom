@@ -1,0 +1,6 @@
+<div class="row">
+  <mat-chip-list>
+    <mat-chip *ngFor="let option of numberOptions" (click)="toogleOrigin(option)" [selected]="option.id == number.id">{{ option.title }}</mat-chip>
+  </mat-chip-list>
+  <button mat-raised-button color="primary">Obtener {{ number.id == 1 ? 'nueva palabra' : 'nuevas palabras' }}</button>
+</div>

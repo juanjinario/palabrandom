@@ -1,3 +1,7 @@
 <div class="content-pane">
-  <p>list works!</p>
+  <h2 class="title">¿Cuántas palabras Quieres?</h2>
+  <app-filters [numberOptions]="numberOptions" [(number)]="number"></app-filters>
+  <div class="list-pane mat-elevation-z4">
+    {{ wordList }}
+  </div>
 </div>
